@@ -129,7 +129,7 @@ class Renderer(BaseRenderer):
             return self.data.name
         elif self.data.root:
             path = str(self.navigation_root_path + self.data.root)
-            root = self.context.unrestrictedTraverse()
+            root = self.context.unrestrictedTraverse(path)
             return _('local_recent_label', default=u"Recent items in ${name}",
                      mapping={'name': root.title_or_id().decode('utf-8')})
         else:
