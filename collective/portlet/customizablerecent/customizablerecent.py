@@ -101,6 +101,10 @@ class Renderer(BaseRenderer):
 
         return url
 
+    @property
+    def available(self):
+        return len(self._data())
+
     @memoize
     def _data(self):
         query = {'sort_limit': self.data.count,
